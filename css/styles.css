@@ -1,0 +1,63 @@
+.container {
+  height: calc(100vh - 16px);
+  display: grid;
+  box-sizing: border-box;
+  gap: 8px;
+  padding: 8px;
+  grid-template-areas: "head"
+  "sb1"
+  "main"
+  "sb2"
+  "foot"
+  ;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-areas: "head head head head head"
+    "sb1 main main main main"
+    "sb2 sb2 sb2 sb2 sb2"
+    "foot foot foot foot foot"
+    ;    
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    grid-template-areas: "head head head head head"
+    "sb1 main main main sb2"
+    "foot foot foot foot foot";    
+  }
+}
+
+.container > header {
+  grid-area: head;
+  background-color: darkred;
+}
+
+.container > aside.sb1 {
+  grid-area: sb1;
+  background-color: darkolivegreen;
+}
+
+.container > main {
+  grid-area: main;
+  background-color: darkblue;
+}
+
+.container > aside.sb2 {
+  grid-area: sb2;
+  background-color: darkorange;
+}
+
+.container > footer {
+  grid-area: foot;
+  background-color: darkslategray
+}
+
+.container > * {
+  border-radius: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+  color: white;
+}
